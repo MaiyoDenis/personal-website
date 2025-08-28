@@ -74,7 +74,7 @@ src/
 ## 📧 Contact
 
 For any questions or suggestions, feel free to reach out:
-- Email: maiyo.denis@example.com
+- Email: maiyo.denismaiyo14@gmail.com
 - Website: www.maiyodenis.com
 
 ## 📄 License
