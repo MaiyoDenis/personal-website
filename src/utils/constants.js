@@ -1,7 +1,7 @@
 export const USER_IMAGES = {
   hero: 'https://pfst.cf2.poecdn.net/base/image/2621e15b92d1b3a94532148959aa06669f0b4a59f1ff7680458e7e3b394843ee?w=1024&h=1536',
-  about: '/src/assets/images/about-image.svg',
-  avatar: '/src/assets/images/hero-image.svg'
+  about: '/personal-website/assets/images/about-image.svg',
+  avatar: '/personal-website/assets/images/hero-image.svg'
 }
 
 export const FRONTEND_SKILLS = [
@@ -29,7 +29,7 @@ export const PROJECTS = [
     title: 'E-Commerce Platform',
     description: 'A full-stack e-commerce platform built with React, Node.js, and MongoDB.',
     technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
-    image: '/src/assets/images/project-ecommerce.svg',
+    image: '/personal-website/assets/images/project-ecommerce.svg',
     demoUrl: 'https://ecommerce-demo.com',
     githubUrl: 'https://github.com/maiyodenis/ecommerce-platform'
   },
@@ -37,7 +37,7 @@ export const PROJECTS = [
     title: 'Task Management App',
     description: 'A collaborative task management application with real-time updates.',
     technologies: ['React', 'Socket.io', 'Node.js', 'PostgreSQL'],
-    image: '/src/assets/images/project-ecommerce.svg',
+    image: '/personal-website/assets/images/project-ecommerce.svg',
     demoUrl: 'https://taskmanager-demo.com',
     githubUrl: 'https://github.com/maiyodenis/task-manager'
   },
@@ -45,7 +45,7 @@ export const PROJECTS = [
     title: 'Weather Dashboard',
     description: 'A responsive weather dashboard with location-based forecasts.',
     technologies: ['React', 'OpenWeather API', 'Chart.js', 'CSS3'],
-    image: '/src/assets/images/project-ecommerce.svg',
+    image: '/personal-website/assets/images/project-ecommerce.svg',
     demoUrl: 'https://weather-dashboard-demo.com',
     githubUrl: 'https://github.com/maiyodenis/weather-dashboard'
   },
@@ -53,7 +53,7 @@ export const PROJECTS = [
     title: 'Portfolio Website',
     description: 'A modern portfolio website showcasing my projects and skills.',
     technologies: ['React', 'Tailwind CSS', 'Vite', 'Framer Motion'],
-    image: '/src/assets/images/project-ecommerce.svg',
+    image: '/personal-website/assets/images/project-ecommerce.svg',
     demoUrl: 'https://maiyodenis.com',
     githubUrl: 'https://github.com/maiyodenis/portfolio'
   },
@@ -61,7 +61,7 @@ export const PROJECTS = [
     title: 'Chat Application',
     description: 'Real-time chat application with multiple rooms and user authentication.',
     technologies: ['React', 'Socket.io', 'Node.js', 'JWT'],
-    image: '/src/assets/images/project-ecommerce.svg',
+    image: '/personal-website/assets/images/project-ecommerce.svg',
     demoUrl: 'https://chat-demo.com',
     githubUrl: 'https://github.com/maiyodenis/chat-app'
   },
@@ -69,7 +69,7 @@ export const PROJECTS = [
     title: 'Blog Platform',
     description: 'A content management system for blogging with admin dashboard.',
     technologies: ['React', 'Node.js', 'MySQL', 'AWS S3'],
-    image: '/src/assets/images/project-ecommerce.svg',
+    image: '/personal-website/assets/images/project-ecommerce.svg',
     demoUrl: 'https://blog-demo.com',
     githubUrl: 'https://github.com/maiyodenis/blog-platform'
   }
