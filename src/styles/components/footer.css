@@ -1,0 +1,117 @@
+/* ===== FOOTER ===== */
+.footer {
+    background-color: #181818;
+    color: white;
+    padding: 3rem 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+}
+
+.footer-brand {
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .footer-brand {
+        margin-bottom: 0;
+    }
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.footer-logo-accent {
+    color: #ff1f59;
+    margin-right: 0.25rem;
+}
+
+.footer-tagline {
+    margin-top: 0.5rem;
+    color: #9CA3AF;
+    font-size: 0.875rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .footer-social {
+        margin-bottom: 0;
+    }
+}
+
+.footer-social-link {
+    background-color: #222222;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social-link:hover {
+    background-color: #ff1f59;
+    transform: translateY(-2px);
+}
+
+.footer-divider {
+    border-top: 1px solid #374151;
+    margin: 2rem 0;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.footer-copyright {
+    color: #9CA3AF;
+    font-size: 0.875rem;
+}
+
+/* Social icons animation */
+.footer-social-link {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.footer-social-link:hover {
+    transform: translateY(-5px) rotate(10deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 0;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+    
+    .footer-divider {
+        margin: 1.5rem 0;
+        padding-top: 1.5rem;
+    }
+}

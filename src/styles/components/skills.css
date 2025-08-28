@@ -1,0 +1,118 @@
+/* ===== SKILLS SECTION ===== */
+.skills-section {
+    padding: 5rem 0;
+    background-color: #f5f5f5;
+}
+
+.dark .skills-section {
+    background-color: #222222;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.skills-column {
+    margin-bottom: 2rem;
+}
+
+.skills-column-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #374151;
+}
+
+.dark .skills-column-title {
+    color: #E5E7EB;
+}
+
+/* ===== SKILL BARS ===== */
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.skill-name {
+    font-weight: 500;
+    color: #374151;
+}
+
+.dark .skill-name {
+    color: #E5E7EB;
+}
+
+.skill-percentage {
+    color: #ff1f59; /* Updated to red */
+    font-size: 0.875rem;
+}
+
+.dark .skill-percentage {
+    color: #9CA3AF;
+}
+
+.skill-bar {
+    height: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-progress {
+    height: 100%;
+    border-radius: 5px;
+    background-color: #ff1f59;
+    position: relative;
+    width: 0;
+    transition: width 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.2) 50%, 
+                transparent 100%);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skills-section {
+        padding: 3rem 0;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .skills-column {
+        margin-bottom: 1rem;
+    }
+    
+    .skills-column-title {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+}

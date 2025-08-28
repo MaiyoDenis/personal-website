@@ -1,0 +1,22 @@
+/* Base Styles */
+@import './components/base.css';
+
+/* Animation Styles */
+@import './components/animations.css';
+
+/* Component Styles */
+@import './components/navigation.css';
+@import './components/hero.css';
+@import './components/about.css';
+@import './components/services.css';
+@import './components/skills.css';
+@import './components/projects.css';
+@import './components/contact.css';
+@import './components/footer.css';
+
+/* Utility Styles */
+@import './components/utilities.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
