@@ -1,8 +1,11 @@
 import React from 'react';
 import useTypingAnimation from '@hooks/useTypingAnimation';
+import useParticlesScript from '@hooks/useParticlesScript';
+import heroProfilePic from '@assets/images/profile-pic-hero.png.png';
 
 const HeroSection = () => {
     useTypingAnimation();
+    useParticlesScript();
 
     return (
         <section id="home" className="hero-section">
@@ -30,10 +33,12 @@ const HeroSection = () => {
                         <div className="relative floating">
                             <div className="absolute -right-4 -bottom-4 w-full h-full border-4 border-accent rounded-2xl"></div>
                             <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl rotating-border">
-                                <div className="hero-image-placeholder">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor" className="w-32 h-32 text-accent">
-                                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-                                    </svg>
+                                <div className="hero-image-container">
+                                    <img 
+                                        src={heroProfilePic} 
+                                        alt="Maiyo Denis - Software Engineer" 
+                                        className="hero-image floating"
+                                    />
                                     <div className="hero-text-overlay">
                                         <div>
                                             <h2 className="text-7xl md:text-8xl font-bold text-white opacity-20">SOFTWARE</h2>

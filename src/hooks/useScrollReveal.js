@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 
+let triggerReveal;
+
 export const useScrollReveal = () => {
   useEffect(() => {
-    const revealElements = document.querySelectorAll('.reveal');
-    
     const revealOnScroll = () => {
+      const revealElements = document.querySelectorAll('.reveal');
       revealElements.forEach((element) => {
         const windowHeight = window.innerHeight;
         const elementTop = element.getBoundingClientRect().top;
@@ -16,6 +17,8 @@ export const useScrollReveal = () => {
       });
     };
 
+    triggerReveal = revealOnScroll;
+
     window.addEventListener('scroll', revealOnScroll);
     // Initial check
     revealOnScroll();
@@ -24,6 +27,12 @@ export const useScrollReveal = () => {
       window.removeEventListener('scroll', revealOnScroll);
     };
   }, []);
+};
+
+export const triggerRevealAnimation = () => {
+  if (triggerReveal) {
+    triggerReveal();
+  }
 };
 
 export default useScrollReveal;

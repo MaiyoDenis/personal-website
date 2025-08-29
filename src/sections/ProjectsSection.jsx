@@ -1,33 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import projects from '../utils/projectsData';
+import { triggerRevealAnimation } from '../hooks/useScrollReveal';
+import ProjectDetailsModal from '../components/ui/ProjectDetailsModal';
 
 const ProjectsSection = () => {
   const [filter, setFilter] = useState('all');
-
-  const projects = [
-    {
-      id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce application with user authentication, product management, and payment processing.',
-      tags: ['React', 'Node.js', 'MongoDB'],
-      category: 'web',
-    },
-    {
-      id: 2,
-      title: 'Fitness Tracking App',
-      description: 'A mobile application that tracks workouts, nutrition, and provides personalized fitness plans.',
-      tags: ['React Native', 'Firebase', 'GraphQL'],
-      category: 'mobile',
-    },
-    {
-      id: 3,
-      title: 'Task Management System',
-      description: 'A collaborative task management platform with real-time updates and comprehensive reporting.',
-      tags: ['Vue.js', 'Express', 'PostgreSQL'],
-      category: 'api',
-    },
-  ];
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const filteredProjects = filter === 'all' ? projects : projects.filter(project => project.category === filter);
+
+  useEffect(() => {
+    triggerRevealAnimation();
+  }, [filter]);
+
+  const openDetails = (project) => {
+    setSelectedProject(project);
+  };
+
+  const closeDetails = () => {
+    setSelectedProject(null);
+  };
 
   return (
     <section id="projects" className="projects-section wave-bottom">
@@ -39,16 +31,14 @@ const ProjectsSection = () => {
             Here are some of my recent projects that showcase my skills and expertise in software engineering.
           </p>
         </div>
-        
-        {/* Project Categories */}
+
         <div className="projects-filter reveal fade-bottom delay-1">
           <button className={`filter-btn ${filter === 'all' ? 'active' : ''}`} onClick={() => setFilter('all')}>All</button>
           <button className={`filter-btn ${filter === 'web' ? 'active' : ''}`} onClick={() => setFilter('web')}>Web Apps</button>
           <button className={`filter-btn ${filter === 'mobile' ? 'active' : ''}`} onClick={() => setFilter('mobile')}>Mobile Apps</button>
           <button className={`filter-btn ${filter === 'api' ? 'active' : ''}`} onClick={() => setFilter('api')}>API Development</button>
         </div>
-        
-        {/* Projects Grid */}
+
         <div className="projects-grid">
           {filteredProjects.length > 0 ? (
             filteredProjects.map(project => (
@@ -73,7 +63,7 @@ const ProjectsSection = () => {
                         <span key={tag} className="project-tag">{tag}</span>
                       ))}
                     </div>
-                    <a href="#projects" className="project-link">View Details <i className="fas fa-arrow-right ml-1"></i></a>
+                    <button className="project-link btn-view-details" onClick={() => openDetails(project)}>View Details</button>
                   </div>
                 </div>
               </div>
@@ -82,12 +72,10 @@ const ProjectsSection = () => {
             <p className="text-center text-gray-600">No projects found in this category.</p>
           )}
         </div>
-        
-        <div className="text-center mt-12 reveal fade-bottom delay-5">
-          <a href="#projects" className="btn-primary">
-            View All Projects <i className="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
+
+        {selectedProject && (
+          <ProjectDetailsModal project={selectedProject} onClose={closeDetails} />
+        )}
       </div>
     </section>
   );

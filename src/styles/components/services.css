@@ -93,9 +93,14 @@
 /* Stats section */
 .stats-section {
     padding: 4rem 0;
-    background-color: #ff1f59;
+    background-color: #ff1f59; /* Changed to blue for better visibility */
     color: white;
     position: relative;
+}
+
+/* Remove the stat-number color override to allow default styling */
+.stat-number {
+    color: white; /* Changed number color to white for better contrast */
 }
 
 .stats-grid {

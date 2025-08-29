@@ -65,6 +65,7 @@ const Header = () => {
           id="menu-btn" 
           className="md:hidden text-gray-800 dark:text-white"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
         >
           <i className="fas fa-bars text-2xl"></i>
         </button>
@@ -72,31 +73,24 @@ const Header = () => {
       
       {/* Mobile Menu */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''} md:hidden`}>
-        <div className="flex flex-col gap-4 py-4">
+        <div className="flex flex-col items-end gap-6 py-8 pr-8">
+          <button 
+            className="close-btn"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            &times;
+          </button>
           {navItems.map((item) => (
             <a 
               key={item.id} 
               href={`#${item.id}`} 
-              className="nav-link font-medium text-gray-700 dark:text-gray-300 hover:text-accent dark:hover:text-accent text-lg py-2"
+              className="nav-link font-medium text-white hover:text-accent text-2xl"
               onClick={() => setMobileMenuOpen(false)}
             >
               {item.label}
             </a>
           ))}
-          <div className="flex gap-4 pt-4">
-            <a href="#" className="social-icon text-gray-600 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-colors">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/denis-maiyo-0a80aa363" className="social-icon text-gray-600 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-colors">
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-            <a href="#" className="social-icon text-gray-600 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-colors">
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a href="https://github.com/MaiyoDenis" className="social-icon text-gray-600 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-colors">
-              <i className="fab fa-github"></i>
-            </a>
-          </div>
         </div>
       </div>
     </header>

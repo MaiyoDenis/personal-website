@@ -1,27 +1,38 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-export const useStatsCounter = () => {
+const useStatsCounter = (targets = []) => {
+    const [counts, setCounts] = useState(targets.map(() => 0));
+
     useEffect(() => {
-        const counters = document.querySelectorAll('.counter');
-        const speed = 2000; // The lower the slower
+        const speed = 2000;
+        let animationFrameId;
+        let startTime;
 
-        counters.forEach(counter => {
-            const updateCount = () => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                const inc = target / speed;
+        const animate = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const elapsed = timestamp - startTime;
 
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(updateCount, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            };
+            setCounts(prevCounts => {
+                return prevCounts.map((count, index) => {
+                    const target = targets[index];
+                    const progress = Math.min(elapsed / speed, 1);
+                    return Math.floor(progress * target);
+                });
+            });
 
-            updateCount();
-        });
-    }, []);
+            if (elapsed < speed) {
+                animationFrameId = requestAnimationFrame(animate);
+            } else {
+                setCounts(targets);
+            }
+        };
+
+        animationFrameId = requestAnimationFrame(animate);
+
+        return () => cancelAnimationFrame(animationFrameId);
+    }, [targets]);
+
+    return counts;
 };
 
 export default useStatsCounter;
