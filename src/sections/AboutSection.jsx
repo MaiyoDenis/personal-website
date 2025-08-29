@@ -14,7 +14,7 @@ const AboutSection = () => {
               <div className="absolute -left-4 -bottom-4 w-full h-full border-4 border-accent rounded-2xl"></div>
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl rotating-border">
                 <div className="about-image-placeholder">
-                  <img src="/personal-website/assets/images/profile pic.png" alt="" className="about-image-placeholders" />
+                  {/* <img src="/personal-website/assets/images/profile pic.png" alt="" className="about-image-placeholders" /> */}
                 </div>
               </div>
             </div>
