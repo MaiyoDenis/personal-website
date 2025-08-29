@@ -9,6 +9,7 @@ on:
 permissions:
   id-token: write   # Needed for OIDC authentication
   contents: read    # Needed for actions like checkout
+  pages: write      # Needed for GitHub Pages deployment
 
 jobs:
   build:
