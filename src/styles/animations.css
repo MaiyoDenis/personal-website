@@ -1,7 +1,0 @@
-@keyframes float {
-    0% { transform: translatey(0); }
-    50% { transform: translatey(-10px); }
-    100% { transform: translatey(0); }
-}
-
-/* Add any additional animations here */
